@@ -1,3 +1,6 @@
+
+##README.md
+
 ## phlsM3U8_downner
 
 
@@ -117,7 +120,7 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
 - When downloading multiple master playlists simultaneously, quality must be selected manually — it is recommended to download them one by one
 
 - For configuration options, see `config_set.config` (hover in your IDE to view all fields)
-
+## 0.1.2 None
 
 ## 0.1.1 Chinese logging -> English logging 
 
