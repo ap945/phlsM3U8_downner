@@ -3,6 +3,9 @@
 Async HLS/m3u8 downloader with AES-128 decryption and ffmpeg merging.
 支持主播放列表自动选择清晰度、切片并发下载、AES-128 解密、ffmpeg 无损合并.
 
+# phlsM3U8_downner
+[![PyPI version](https://img.shields.io/pypi/v/phlsM3U8-downner)](https://pypi.org/project/phlsM3U8-downner/)
+
 ## Install
 
     pip install phlsM3U8_downner
