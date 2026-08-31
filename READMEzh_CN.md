@@ -61,6 +61,8 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
 - 多个主播放列表同时下载时需手动选清晰度，建议逐个下载
 - 配置项见 `config_set.config`（IDE 悬浮即可查看全部字段）
 
+## 0.1.2 None
+
 ## 0.1.1 Chinese logging -> English logging
 
 ## 0.1.0 first release
