@@ -1,0 +1,12 @@
+{
+    "test.mp4": {
+        "output_path": "D:\\pycharm\\pythonProject\\phlsM3U8_downner\\hls_downloads\\ts_file\\test.mp4",
+        "segments_total": 6,
+        "segments_succeeded": 6,
+        "failed_segments": [],
+        "key_errors": [],
+        "duration_seconds": 0.21492695808410645,
+        "file_size_bytes": 7382455,
+        "list_path": "D:\\pycharm\\pythonProject\\phlsM3U8_downner\\hls_downloads\\ts_file\\test.mp4\\test.mp4_list.txt"
+    }
+}
