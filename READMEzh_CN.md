@@ -5,22 +5,22 @@
 Async HLS/m3u8 downloader with AES-128 decryption and ffmpeg merging.
 支持主播放列表选择清晰度、切片并发下载、AES-128 解密、ffmpeg 无损合并.
 
-## Install
+## 安装
 
     pip install phlsM3U8_downner
 
 Requires **ffmpeg** on system PATH:
 Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo apt install ffmpeg`
 
-## Usage
+## 用法
 
 
 # import phlsM3U8_downner 
 
-**Or**
+**或**
 
 # from phlsM3U8_downner import * #import all functions
-#Now I use 'import phlsM3U8_downner' 
+#这里我就用'import phlsM3U8_downner' 了
 
 ```
 import phlsM3U8_downner
@@ -36,11 +36,11 @@ headers={'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537
 result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
 ```
 
-#you can see down a video success:
+#你就可以看到下载成功了:
 
 ![example](./docs/video/down.gif)
 
-#This is a very simple example
+#这是一个很简单的例子
 
 ## More Usage
     - Config:
@@ -79,7 +79,7 @@ result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
         -如果phlsM3U8_downner获取不到key,例如DRM中,你可以使用**defined_key**来放你获取到的key(bytes),如果你放了**defined_key**,那请你务必需将**defined_iv**也补充上去**{key_url:函数名称}**,虽然phlsM3U8_downner内置了采用序列号的方式来替换iv但是这是一个保险
 
         (resolver.defined_method Method resolver.defined_func func resolver.encrypto_key encrypto_key resolver.defined_iv iv resolver.defined_key key)
-## Notes
+## 注意事项
 - 不要同时对多个下载使用同一个输出文件名（后者会覆盖前者）
 - 多个主播放列表同时下载时需手动选清晰度，建议逐个下载
 - 配置项见 `config_set.config`（IDE 悬浮即可查看全部字段）
