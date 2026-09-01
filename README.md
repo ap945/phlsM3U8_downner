@@ -64,7 +64,7 @@ result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
   - Config:
 
       in config_set  It has a lot of settings, see below:
-
+```
    ————————————————                    ————————————————————————————
 
    concurrency: int = 20               # Download several slices at the same time
@@ -98,6 +98,7 @@ result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
    Rich: bool = True                   # Show a progress bar (enabled by default)
 
    ——————————————————                      ————————————————————————
+```
 
          -Notes on `config_set`:
 
