@@ -43,7 +43,7 @@ headers={'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537
 result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
 #you can see down a video success
 
-![example](docs/video/down.gif)
+![example](./docs/video/down.gif)
 
 #This is a very simple example
 
