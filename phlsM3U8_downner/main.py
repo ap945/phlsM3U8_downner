@@ -9,7 +9,7 @@ from . import parser,models
 from . import Download_Manage as _DM
 from . import _Converter as _CV
 from . import config as Config, resolver, exceptions
-"""Bad_Requests是下载失败,Bad_ts是解密失败,Bad_Response是请求m3u8文件内容时失败"""
+
 
 
 
@@ -143,7 +143,7 @@ async def main(url_dic : dict,
             save_records(DATA_PATH, records)
             Result[OutputFileName[url]]=DownloadResult
         except Exception as e:
-            logger.error('%s 崩溃: %r', outname, e, exc_info=e)
+            logger.error('%s Crashed: %r', outname, e, exc_info=e)
             Result[OutputFileName[url]]=models.DownloadResult(
                 output_path=outname,
                 segments_total=0, segments_succeeded=0,
@@ -186,7 +186,7 @@ async def main(url_dic : dict,
                     logger.error('%s Error Failed: %s', i.m3u8_uri, i.reason)
                 for t, r in zip(tasks, results):
                     if isinstance(r, Exception):
-                        logger.error('%s 崩溃: %r', t.get_name(), r, exc_info=r)
+                        logger.error('%s Crashed: %r', t.get_name(), r, exc_info=r)
             else:
                 
                 records = load_records(DATA_PATH)
@@ -224,7 +224,7 @@ async def main(url_dic : dict,
                         cv = _CV.converter(str(list_path), str(outname), quiet=cfg.quiet, keep_segments=keep_segments)
                         size = await cv.converter()
                     elif not new_failed and not old_lines:#读list.txt为空
-                        logger.error(f'{outname}: list.txt 丢失,已跳过合并\n')
+                        logger.error(f'{outname}: list.txt Lost, merge skipped\n')
 
                     records[outname] = models.DownloadResult(         
                         output_path=DownnerResult['OutputPath'],
@@ -247,37 +247,3 @@ async def main(url_dic : dict,
         
 
 
-if __name__ == "__main__":
-    headers = {
-    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-    'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
-    'cache-control': 'no-cache',
-    'dnt': '1',
-    'pragma': 'no-cache',
-    'priority': 'u=0, i',
-    'sec-ch-ua': '"Not=A?Brand";v="99", "Microsoft Edge";v="151", "Chromium";v="151"',
-    'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-platform': '"Windows"',
-    'sec-fetch-dest': 'document',
-    'sec-fetch-mode': 'navigate',
-    'sec-fetch-site': 'none',
-    'sec-fetch-user': '?1',
-    'sec-gpc': '1',
-    'upgrade-insecure-requests': '1',
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0',
-}
-
-    # url='https://hls.dscxru.cn/videos5/f4f9aab7beee763bb4b45b9ce2bd246f/f4f9aab7beee763bb4b45b9ce2bd246f.m3u8?auth_key=1788152545-6a950ae1c48e7-0-b7c6ae73970cfe1b6d35a1304a6d06c2&v=3&time=0'
-    # url1='https://hls.dscxru.cn/videos5/b954db55fdd0dd747914b7627f5b546e/b954db55fdd0dd747914b7627f5b546e.m3u8?auth_key=1788153308-6a950ddc7f54f-0-84457ac185ae10cde88bd9def9e99ea3&v=3&time=0'
-    # url2='https://hls.dscxru.cn/videos5/6009b9239bce806c7f8b967dad6619c3/6009b9239bce806c7f8b967dad6619c3.m3u8?auth_key=1788153208-6a950d78b88d8-0-edead096d4f178adcc66b2839ed7dfe7&v=3&time=0'
-    # url3='https://hls.dscxru.cn/videos5/ab573f93d55eb6d544af243e45b1134e/ab573f93d55eb6d544af243e45b1134e.m3u8?auth_key=1788153208-6a950d78b7c42-0-2b16aa6ab2ab2e885ce6c16c1d8f7c8c&v=3&time=0'
-    url5='http://127.0.0.1/hls/ma.m3u8'
-    
-    
-    # url='http://127.0.0.1/hls/e/m.m3u8'
-    
-    # dic={url:'1.mp4',url1:'2.mp4',url2:'3.mp4',url3:'4.mp4',#,'https://hls.dscxru.cn/videos5/b954db55fdd0dd747914b7627f5b546e/b954db55fdd0dd747914b7627f5b546e.m3u8?auth_key=1788065964-6a93b8aca8d66-0-0d59bdf9f86943810b6dd2e8f39d9b06&v=3&time=0':'2.mp4'}
-    dic={url5:'6.mp4'}
-    # config=Config.config(breakpoint_request=False,Wait_Merge=True,quiet=False)
-    a=asyncio.run(main(url_dic=dic, headers=headers))#,config=config))
-    print(a)
