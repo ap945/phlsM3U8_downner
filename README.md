@@ -35,7 +35,7 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
 **Or**
 
 # from phlsM3U8_downner import * #import all functions
-#Now I use 'import phlsM3U8_downner' 
+#Here I use 'import phlsM3U8_downner' 
 
 ```
 import phlsM3U8_downner
