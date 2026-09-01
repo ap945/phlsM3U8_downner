@@ -22,8 +22,8 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
 
 url1='http://127.0.0.1/hls/e/m.m3u8'
 url1_name = '1.mp4'
-dic={url1:url1_name}
-headers={'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0'}
+dic={url1:url1_name}\n
+headers={'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0'}\n
 result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
 #you can see down a video success:
 
