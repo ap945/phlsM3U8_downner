@@ -17,20 +17,22 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
 
 # import phlsM3U8_downner 
 
-##Or
+**Or**
 
 # from phlsM3U8_downner import * #import all functions
-#Now I use 'import phlsM3U8_downner' #import  
+#Now I use 'import phlsM3U8_downner' 
 
--url1='http://127.0.0.1/hls/e/m.m3u8'
+- import phlsM3U8_downner
 
--url1_name = '1.mp4'
+- url1='http://127.0.0.1/hls/e/m.m3u8'
 
--dic={url1:url1_name}
+- url1_name = '1.mp4'
 
--headers={'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0'}
+- dic={url1:url1_name}
 
--result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
+- headers={'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0'}
+
+- result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
 
 #you can see down a video success:
 
