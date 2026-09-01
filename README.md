@@ -100,17 +100,17 @@ result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
    ——————————————————                      ————————————————————————
 ```
 
-         -Notes on `config_set`:
+#Notes on `config_set`:
 
-         -If you want to use breakpoint_request, the failed segments in data.json (failed_segments/key_errors) must not be [], otherwise nothing will happen
+         - If you want to use breakpoint_request, the failed segments in data.json (failed_segments/key_errors) must not be [], otherwise nothing will happen
 
-         -data.json refreshes automatically after a file is downloaded; note that **phlsM3U8_downner will overwrite existing content**
+         - data.json refreshes automatically after a file is downloaded; note that **phlsM3U8_downner will overwrite existing content**
 
-         -If quiet is set to True, most printing will be reduced — even the progress bar will not be output
+         - If quiet is set to True, most printing will be reduced — even the progress bar will not be output
 
-         -key_method / method: method is the mode for regular segment (segment) file requests, while key_method is the mode used specifically for key requests; this is useful in some scenarios. You can set them all to **'get'**
+         - key_method / method: method is the mode for regular segment (segment) file requests, while key_method is the mode used specifically for key requests; this is useful in some scenarios. You can set them all to **'get'**
 
-         -Wait_Merge: if set to True, it will ignore the failed segments in data.json and instead merge the successful segments, which may result in a merged video that is missing some parts
+         - Wait_Merge: if set to True, it will ignore the failed segments in data.json and instead merge the successful segments, which may result in a merged video that is missing some parts
 
 - resolver:
 
