@@ -82,12 +82,12 @@ Windows：`winget install ffmpeg` · macOS：`brew install ffmpeg` · Linux：`s
     - 再次运行程序时，会自动读取 data.json 中的失败分片，重新下载并合并
     ![breakpoint2](docs/video/breakpoint1show.gif)
     - 同时，data.json 中对应的失败记录会被清空
-
-## 0.1.3 优化
-
-## 0.1.2 无更新说明
-
-## 0.1.1 日志由中文改为英文
+## 更新日志
+    ## 0.1.3 优化
+    
+    ## 0.1.2 无更新说明
+    
+    ## 0.1.1 日志由中文改为英文
 
 ## 0.1.0 首次发布
 
