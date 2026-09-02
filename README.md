@@ -52,6 +52,7 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
   - Config:
 
       in Config  It has a lot of settings, see below:
+    ![config](./docs/image/config.png)
 ```
    ————————————————                    ————————————————————————————
    transient : bool=True            
