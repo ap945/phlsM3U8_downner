@@ -101,7 +101,7 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
   -After starting, data.json will be created in the example folder, note that the original data.json data will not be copied into the new data.json file
 
   
-      ![data_path1](./docs/image/user_data1.png)
+  ![data_path1](./docs/image/user_data1.png)
 
   
 ##breadkpoint_requese of config
@@ -116,6 +116,8 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
   -Then when you run it, it will automatically read the failed files in data.json and download and merge them
 ![breakpoint2](docs/video/breakpoint1show.gif)
   -Meanwhile, the corresponding data in data.json will be cleared
+
+  
 ## 0.1.3 optimise
 
 ## 0.1.2 None
