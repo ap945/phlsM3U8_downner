@@ -1,12 +1,12 @@
-# ===== 构建系统：告诉 pip "用什么工具打包" =====
+
 [build-system]
-requires = ["hatchling"]              # 打包工具，换 setuptools 也行，但下面配置要跟着改
+requires = ["hatchling"]              
 build-backend = "hatchling.build"
 
-# ===== 项目元信息：PyPI 页面上显示的所有内容 =====
+
 [project]
 name = "phlsM3U8_downner"         
-version = "0.1.0"                     # 每次更新发布必须增加
+version = "0.1.4"                     # 每次更新发布必须增加
 description = "Async HLS/m3u8 downloader with AES-128 decryption and ffmpeg merging"
 readme = "README.md"                  
 license = "MIT"
@@ -23,7 +23,7 @@ classifiers = [
     "Topic :: Multimedia :: Video",
 ]
 
-# ===== 依赖：pip install =====
+# 依赖
 
 dependencies = [
     "aiohttp",        # main.py / Download_Manage.py
