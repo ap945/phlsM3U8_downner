@@ -153,6 +153,9 @@ result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
 - When downloading multiple master playlists simultaneously, quality must be selected manually — it is recommended to download them one by one
 
 - For configuration options, see `Config` (hover in your IDE to view all fields)
+  
+## 0.1.3 optimise
+
 ## 0.1.2 None
 
 ## 0.1.1 Chinese logging -> English logging 
