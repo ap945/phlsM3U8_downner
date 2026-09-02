@@ -44,7 +44,7 @@ result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
 
 ## More Usage
     - Config:
-        in config_set 它含有很多配置项,见下:
+        在 Config 中它含有很多配置项,见下:
     ————————————————                    ————————————————————————————
     concurrency: int = 20               # 同时下载几个切片
     limit : int = 20                    #最大请求数量
@@ -101,7 +101,7 @@ result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
 ## 注意事项
 - 不要同时对多个下载使用同一个输出文件名（后者会覆盖前者）
 - 多个主播放列表同时下载时需手动选清晰度，建议逐个下载
-- 配置项见 `config_set.config`（IDE 悬浮即可查看全部字段）
+- 配置项见 `More usage Config`（IDE 悬浮即可查看全部字段）
 
 ## 0.1.2 None
 
