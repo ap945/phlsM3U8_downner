@@ -9,11 +9,11 @@
 支持主播放列表清晰度选择、分片并发下载、AES-128 解密，以及通过 ffmpeg 无损合并。
 
 ## 安装
-    - pip install phlsM3U8_downner
+    pip install phlsM3U8_downner
 
 
 ## 更新包
-    - pip install --upgrade phlsM3U8_downner
+    pip install --upgrade phlsM3U8_downner
 ————————————————————————————————————————————————
 
 需系统 PATH 环境变量中包含 **ffmpeg**：
