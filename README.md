@@ -5,8 +5,10 @@
 
 ## phlsM3U8_downner
 
-## Update pack
-  - pip install --upgrade phlsM3U8_downner
+    ## Update pack
+      - pip install --upgrade phlsM3U8_downner
+
+
 
 Async HLS/m3u8 downloader with AES-128 decryption and ffmpeg merging.
 
