@@ -62,7 +62,24 @@ result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
     Wait_Merge : bool =True          #等下载全部成功再合并(false是不等)
     Rich : bool =True                   #显示进度条(默认是)
     ——————————————————                      ————————————————————————
-- config_set注意事项:
+-How use Condig?
+```
+  #这里我用'import phlsM3U8_downner' 
+  import phlsM3U8_downner
+  url1='http://127.0.0.1/hls/e/m.m3u8'
+  
+  url1_name = '1.mp4'
+  dic={url1:url1_name}
+  config=phlsM3U8_downner.config(quiet=False,...)
+  
+  headers={'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0'}
+  config=phlsM3U8_downner.Config(quiet=False,transient=True)
+  result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers,config=config)
+#你可以看到一个下载视频成功了
+#你可以参考配置设置来自行混合搭配。
+#这是一个简单的例子
+```
+- Config注意事项:
  ```
     - 如果你想使用breakpoint_request,这需要data,json中失败的片段(failed_segments/key_errors)不为[],否则什么都不会发生
     - 等你下载了一个文件后会自动刷新,需要注意的是,**phlsM3U8_downner会覆盖原有内容**
