@@ -55,28 +55,7 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
     ![config](./docs/image/config.png)
 
 -How use Condig?
-```
-  #Now I use 'import phlsM3U8_downner' #import
-
-  import phlsM3U8_downner
-
-  url1='http://127.0.0.1/hls/e/m.m3u8'
-  url1_name = '1.mp4'
-
-  dic={url1:url1_name}
-
-  #config=phlsM3U8_downner.config(quiet=False,...)
-  
-  headers={'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0'}
-
-  config=phlsM3U8_downner.Config(quiet=False,transient=True)
-
-  result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers,config=config)
-
-  #you can see down a video success
-  #You can just refer to the config settings to mix and match on your own.
-  #This is a example
-```
+  ![config_use](./docs/image/config_use.png)
 
 #Notes on `Config`:
 
@@ -115,13 +94,29 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
 - When downloading multiple master playlists simultaneously, quality must be selected manually — it is recommended to download them one by one
 
 - For configuration options, see `Config` (hover in your IDE to view all fields)
-  
+##data.json
+  -data.json By default will be at hls_downloads\data.json
+  -If you want to change the directory, for example in cases where the directory is duplicated, you just need to change the value of data_path in the config
+  ![data_path](./docs/image/data_path1.png)
+  -After starting, data.json will be created in the example folder, note that the original data.json data will not be copied into the new data.json file
+  ![data_path1](./docs/image/user_data1.png)
+##breadkpoint_requese of config
+  -Sometimes you see download failures like this
+  ![Failed1](./docs/image/Failed1.png)
+  ![Failed1gif](./docs/video/Failed1show.gif)
+  -At this point, you'll see the data.json file show the following content
+  ![data.jsonFailed_show](./docs/image/data.jsonFailed_show.png)
+  -This means either key_error or FailedSegments is not None
+  -You can set breakpoint_request is True
+  ![breakpoint1](./docs/image/breakpoint1.png)
+  -Then when you run it, it will automatically read the failed files in data.json and download and merge them
+  ![breakpoint2](docs/video/breakpoint1show.gif)
+  -Meanwhile, the corresponding data in data.json will be cleared
 ## 0.1.3 optimise
 
 ## 0.1.2 None
 
 ## 0.1.1 Chinese logging -> English logging 
-
 
 ## 0.1.0 first release
 
