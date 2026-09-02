@@ -101,7 +101,7 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
   -After starting, data.json will be created in the example folder, note that the original data.json data will not be copied into the new data.json file
 
   
-![data_path1](./docs/image/user_data1.png)
+      ![data_path1](./docs/image/user_data1.png)
 
   
 ##breadkpoint_requese of config
