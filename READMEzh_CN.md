@@ -63,6 +63,11 @@ Windows：`winget install ffmpeg` · macOS：`brew install ffmpeg` · Linux：`s
   ![resolver](./docs/image/resolver1.png)
 - 每一个key_uri对应一个值，用字典传，传好后直接运行程序程序会用key_uri为键优先寻找resolver中的值
 
+## 使用DownAndMerge后返回的值有什么用?
+    - 他会返回一个字典,以名字为键,可以拿到一个对象,对象含有以下值:
+    ![result](./docs/image/result.png)
+    - result['your file name'].xxx可以获得特定的值
+
 ## Notes
 
 - 不要同时给多个下载任务设置相同的输出文件名（后启动的任务会覆盖先完成的文件）
