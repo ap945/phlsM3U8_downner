@@ -12,7 +12,7 @@ readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]          
 requires-python = ">=3.10"            
-authors = [{ name = "Error" }]
+authors = [{ name = "AP945" }]
 keywords = ["hls", "m3u8", "downloader", "ffmpeg", "aes-128","segment"]
 classifiers = [
     "Natural Language :: Chinese (Simplified)",
