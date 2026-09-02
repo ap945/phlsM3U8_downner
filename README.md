@@ -90,6 +90,12 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
    ![resolver](./docs/image/resolver1.png)
 - Each key_uri corresponds to a value, pass it with a dictionary, and once passed, just run the program. The program will use key_uri as the key to prioritise finding the value in the resolver
 
+## What is the purpose of the value returned after using DownAndMerge?
+- It returns a dictionary with names as keys, which allows you to get an object containing the following values:
+![result](./docs/image/result.png)
+- You can get specific values using result['your file name'].xxx
+
+
 ## Notes
 
 - Do not use the same output filename for multiple downloads at the same time (the later one will overwrite the earlier one)
