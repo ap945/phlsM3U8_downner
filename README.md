@@ -99,6 +99,22 @@ result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
 
    ——————————————————                      ————————————————————————
 ```
+-How use Condig?
+```
+  #Now I use 'import phlsM3U8_downner' #import  
+  url1='http://127.0.0.1/hls/e/m.m3u8'
+  
+  url1_name = '1.mp4'
+  dic={url1:url1_name}
+  #config=phlsM3U8_downner.config(quiet=False,...)
+  
+  headers={'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0'}
+  config=phlsM3U8_downner.Config(quiet=False,transient=True)
+  result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers,config=config)
+  #you can see down a video success
+  #You can just refer to the config settings to mix and match on your own.
+  #This is a example
+```
 
 #Notes on `config_set`:
 
