@@ -2,6 +2,7 @@
 
 ## phlsM3U8_downner
 
+
 支持 AES-128 解密与 ffmpeg 合并的异步 HLS/m3u8 下载工具。
 
 支持主播放列表清晰度选择、分片并发下载、AES-128 解密，以及通过 ffmpeg 无损合并。
@@ -9,6 +10,9 @@
 ## Install
 
 ## pip install phlsM3U8_downner
+
+ ## 更新包
+      - pip install --upgrade phlsM3U8_downner
 
 需系统 PATH 环境变量中包含 **ffmpeg**：
 Windows：`winget install ffmpeg` · macOS：`brew install ffmpeg` · Linux：`sudo apt install ffmpeg`
