@@ -5,7 +5,7 @@
 
 ## phlsM3U8_downner
 
-    ## Update pack
+    Update pack
       - pip install --upgrade phlsM3U8_downner
 
 
