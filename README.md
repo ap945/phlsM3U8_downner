@@ -37,19 +37,7 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
 # from phlsM3U8_downner import * #import all functions
 #Here I use 'import phlsM3U8_downner' 
 
-```
-import phlsM3U8_downner
-
-url1='http://127.0.0.1/hls/e/m.m3u8'
-
-url1_name = '1.mp4'
-
-dic={url1:url1_name}
-
-headers={'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0'}
-
-result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
-```
+![eazy](./docs/image/config_use.png)
 
 #you can see down a video success:
 
