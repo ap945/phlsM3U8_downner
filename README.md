@@ -99,7 +99,11 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
   -If you want to change the directory, for example in cases where the directory is duplicated, you just need to change the value of data_path in the config
   ![data_path](./docs/image/data_path1.png)
   -After starting, data.json will be created in the example folder, note that the original data.json data will not be copied into the new data.json file
+
+  
   ![data_path1](./docs/image/user_data1.png)
+
+  
 ##breadkpoint_requese of config
   -Sometimes you see download failures like this
   ![Failed1](./docs/image/Failed1.png)
