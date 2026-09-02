@@ -117,12 +117,12 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
 ![breakpoint2](docs/video/breakpoint1show.gif)
   -Meanwhile, the corresponding data in data.json will be cleared
 
-  
-## 0.1.3 optimise
-
-## 0.1.2 None
-
-## 0.1.1 Chinese logging -> English logging 
-
-## 0.1.0 first release
+## Changelog
+    ## 0.1.3 optimise
+    
+    ## 0.1.2 None
+    
+    ## 0.1.1 Chinese logging -> English logging 
+    
+    ## 0.1.0 first release
 
