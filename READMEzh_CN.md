@@ -101,7 +101,7 @@ result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
 ```
 - Config注意事项:
  ```
-    - 如果你想使用breakpoint_request,这需要data,json中失败的片段(failed_segments/key_errors)不为[],否则什么都不会发生
+    - 如果你想使用breakpoint_request,这需要data,json中失败的片段(failed_segments和key_errors)不为[],否则什么都不会发生
     - 等你下载了一个文件后会自动刷新,需要注意的是,**phlsM3U8_downner会覆盖原有内容**
     - quiet 这个设置如果为True,那么将会少很多打印,甚至连进度条都不会输出
     - key_method method,method是为普通切片(segment)文件请求的模式,而key_method是专门为key请求的模式,在某一些场景中他很有用,你可以使他们全部为**'get'**
