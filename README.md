@@ -97,24 +97,24 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
 ##data.json
   -data.json By default will be at hls_downloads\data.json
   -If you want to change the directory, for example in cases where the directory is duplicated, you just need to change the value of data_path in the config
-  ![data_path](./docs/image/data_path1.png)
+![data_path](./docs/image/data_path1.png)
   -After starting, data.json will be created in the example folder, note that the original data.json data will not be copied into the new data.json file
 
   
-  ![data_path1](./docs/image/user_data1.png)
+![data_path1](./docs/image/user_data1.png)
 
   
 ##breadkpoint_requese of config
   -Sometimes you see download failures like this
-  ![Failed1](./docs/image/Failed1.png)
-  ![Failed1gif](./docs/video/Failed1show.gif)
+![Failed1](./docs/image/Failed1.png)
+![Failed1gif](./docs/video/Failed1show.gif)
   -At this point, you'll see the data.json file show the following content
-  ![data.jsonFailed_show](./docs/image/data.jsonFailed_show.png)
+![data.jsonFailed_show](./docs/image/data.jsonFailed_show.png)
   -This means either key_error or FailedSegments is not None
   -You can set breakpoint_request is True
-  ![breakpoint1](./docs/image/breakpoint1.png)
+![breakpoint1](./docs/image/breakpoint1.png)
   -Then when you run it, it will automatically read the failed files in data.json and download and merge them
-  ![breakpoint2](docs/video/breakpoint1show.gif)
+![breakpoint2](docs/video/breakpoint1show.gif)
   -Meanwhile, the corresponding data in data.json will be cleared
 ## 0.1.3 optimise
 
