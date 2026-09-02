@@ -53,6 +53,9 @@ Windows：`winget install ffmpeg` · macOS：`brew install ffmpeg` · Linux：`s
         - 如果获取到的密钥本身是加密的，可以使用 encrypto_key **{key_url: function_name}** 来解密密钥
         - 如果 phlsM3U8_downner 无法获取密钥（例如 DRM 场景），可以使用 **defined_key** 直接传入你已获取的密钥（字节类型）。如果使用 **defined_key**，请务必同时通过 **defined_iv** 传入 **{key_url: iv}**。尽管 phlsM3U8_downner 内置了兜底逻辑，会使用分片序号自动生成 iv，但该设置能提供额外保障
         （resolver.defined_method 方法解析器、resolver.defined_func 自定义函数、resolver.encrypto_key 密钥解密、resolver.defined_iv 自定义初始向量、resolver.defined_key 自定义密钥）
+- 怎么用?举个例子:
+  ![resolver](./docs/image/resolver1.png)
+- 每一个key_uri对应一个值，用字典传，传好后直接运行程序程序会用key_uri为键优先寻找resolver中的值
 
 ## Notes
 
