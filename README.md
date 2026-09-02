@@ -87,6 +87,11 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
 
        (resolver.defined_method Method resolver.defined_func func resolver.encrypto_key encrypto_key resolver.defined_iv iv resolver.defined_key key)
 
+- example of resolver:
+- how use?
+   ![resolver](./docs/image/resolver1.png)
+-Each key_uri corresponds to a value, pass it with a dictionary, and once passed, just run the program. The program will use key_uri as the key to prioritise finding the value in the resolver
+
 ## Notes
 
 - Do not use the same output filename for multiple downloads at the same time (the later one will overwrite the earlier one)
