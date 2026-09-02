@@ -86,6 +86,8 @@ Windows：`winget install ffmpeg` · macOS：`brew install ffmpeg` · Linux：`s
     ![breakpoint2](docs/video/breakpoint1show.gif)
     - 同时，data.json 中对应的失败记录会被清空
 ## 更新日志
+    ## 0.1.4 在config中更新 Detailed_Infomaition属性,可详细显示重试报详信息
+
     ## 0.1.3 优化
     
     ## 0.1.2 无更新说明
