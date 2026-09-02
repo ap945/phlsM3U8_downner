@@ -66,37 +66,53 @@ result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
       in Config  It has a lot of settings, see below:
 ```
    ————————————————                    ————————————————————————————
-
-   concurrency: int = 20               # Download several slices at the same time
-
-   limit : int = 20                    #Maximum number of requests
-
-   timeout: float = 30.0               # Timeout in seconds for a single segment
-
-   retries: int = 3                    # Number of retries for a failed segment
-
-   retry_backoff: float = 1.5          # Retry interval multiplier: 1s → 1.5s → 2.25s (exponential backoff)
-
-   stop_after_delay: float | int = 15  # Maximum total duration of the entire retry process
-
-   verify_ssl: bool = False            # Whether to verify SSL (download-site certificates are often broken; off by default)
-
-   keep_segments: bool = False         # Whether to keep .ts files after a successful merge (False = clean up)
-
-   breakpoint_request: bool = False    # Load previously unfinished files and re-download them (True = re-download)
-
-   quiet: bool = False                 # Quiet mode
-
-   method: str = 'get'                 # HTTP method for requests
-
-   key_method: str = 'get'             # HTTP method for key requests
-
-   data_path: str | Path = str(Path.cwd() / 'hls_downloads')  # Location of user_data (stores .ts/.m4s/.mp4 media files and data.json)
-
-   Wait_Merge: bool = True             # Wait for all downloads to succeed before merging (False = don't wait)
-
-   Rich: bool = True                   # Show a progress bar (enabled by default)
-
+   transient : bool=True            
+    """Hide the progress bar after download completes"""
+——————————————————————————
+    concurrency: int = 20               
+    """Number of segments to download simultaneously"""
+——————————————————————————
+    limit : int = 20                   
+    """Maximum number of requests"""
+——————————————————————————
+    timeout: float = 30.0               
+    """Per-segment timeout in seconds"""
+——————————————————————————
+    retries: int = 3                   
+    """Retry attempts per segment on failure"""
+——————————————————————————
+    retry_backoff: float = 1.5          
+    """Retry interval multiplier: 1s → 1.5s → 2.25s (exponential backoff)"""
+——————————————————————————
+    stop_after_delay : float | int =15  
+    """Maximum total time allowed for the entire retry process"""
+——————————————————————————
+    verify_ssl: bool = False           
+    """Whether to verify SSL (download sites often have certificate issues, disabled by default)"""
+——————————————————————————
+    keep_segments: bool = False         
+    """Whether to keep .ts files after a successful merge (False = clean up)"""
+——————————————————————————
+    breakpoint_request : bool =False    
+    """Load and re-download previously unfinished files (True = re-download)"""
+——————————————————————————
+    quiet : bool=False                 
+    """Quiet mode"""
+——————————————————————————
+    method : str = 'get'                
+    """HTTP method for requests"""
+——————————————————————————
+    key_method : str = 'get'           
+    """HTTP method for key requests"""
+——————————————————————————
+    data_path : str|Path = str(Path.cwd() /'hls_downloads') 
+    """Location of user_data  (Store ts/m4s/mp4 media files and data.json)"""
+——————————————————————————
+    Wait_Merge : bool =True          
+    """Wait for all downloads to succeed before merging (False = don't wait)"""
+——————————————————————————
+    Rich : bool =True                   
+    """Show progress bar (enabled by default)"""
    ——————————————————                      ————————————————————————
 ```
 -How use Condig?
