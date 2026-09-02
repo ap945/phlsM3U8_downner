@@ -121,6 +121,8 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
   -Meanwhile, the corresponding data in data.json will be cleared
 
 ## Changelog
+    ## 0.1.4 Update the Detailed_Information property in the config to show detailed retry report info
+
     ## 0.1.3 optimise
     
     ## 0.1.2 None
