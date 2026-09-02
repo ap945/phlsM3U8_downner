@@ -141,7 +141,7 @@ result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
 
 #Notes on `Config`:
 
-         - If you want to use breakpoint_request, the failed segments in data.json (failed_segments/key_errors) must not be [], otherwise nothing will happen
+         - If you want to use breakpoint_request, the failed segments in data.json (failed_segments and key_errors) must not be [], otherwise nothing will happen
 
          - data.json refreshes automatically after a file is downloaded; note that **phlsM3U8_downner will overwrite existing content**
 
