@@ -13,15 +13,12 @@ Supports choosing quality in the main playlist, concurrent slice downloads, AES-
 
 
 ## Install
-
-
-
-##  pip install phlsM3U8_downner
+    - pip install phlsM3U8_downner
 
 
 ## Update pack
     - pip install --upgrade phlsM3U8_downner
-
+————————————————————————————————————————————————
 
 Requires **ffmpeg** on system PATH:
 
