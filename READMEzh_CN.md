@@ -1,4 +1,4 @@
-## 最新的README.md在:"https://github.com/ap945/phlsM3U8_downner"
+
 
 ## PYPI:[https://pypi.org/project/phlsM3U8-downner/](https://pypi.org/project/phlsM3U8-downner/)
 
