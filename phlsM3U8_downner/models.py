@@ -76,21 +76,20 @@ class MapSegment:
     num : int
 @dataclass
 class DownloadResult:
-    """
-    下载结束后返回给调用方的"完整报告单"。
 
-    赋值过程（回答你之前的问题——它不是被外部赋值的，是内部构建的）：
-      1. download() 一开始创建空的收集器(succeeded=0, failed=[] ...)
-      2. 解析 m3u8 后得到 total
-      3. 下载循环里逐个累计 succeeded / 往 failed 里 append
-      4. 合并成功后得到 output_path,stat() 拿文件大小
-      5. 最后 return DownloadResult(...) —— 这一步才是"诞生"
-    """
     output_path: Optional[str|Path]         # 合并后的视频路径；有失败没合并时为 None
-    segments_total: int                 # 总切片数
-    segments_succeeded: int             # 成功数
-    failed_segments: list[FailedSegment]    # 下载失败清单（对应你的 Bad_Requests）
-    key_errors: list[KeyErrorInfo]          # 解密失败清单（对应你的 Bad_ts）
-    duration_seconds: float             # 整个下载（含合并）花了多少秒
-    file_size_bytes: int                # 输出文件大小（没合并则 0）
-    list_path : Optional[str|Path]=None
+    """The path of the merged video; it will be None if there was a failure to merge"""
+    segments_total: int                     # 总切片数
+    """Total number of slices"""
+    segments_succeeded: int                 # 成功数
+    """Number of successes"""
+    failed_segments: list[FailedSegment]    # 下载失败清单
+    """Download failed list """
+    key_errors: list[KeyErrorInfo]          # 解密失败清单
+    """Decryption failure list """
+    duration_seconds: float                 # 整个下载（含合并）花了多少秒
+    """How many seconds did the whole download (including merging) take"""
+    file_size_bytes: int                    # 输出文件大小（没合并则 0）
+    """Output file size (0 if not merged)"""
+    list_path : Optional[str|Path]=None     #list.txt的路径
+    """the path of list.txt"""

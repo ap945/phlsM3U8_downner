@@ -56,7 +56,7 @@ async def main(url_dic : dict,
             headers= None,
             method : str ='get',
             sem : int = 35 ,
-            config : Optional[Config.config] = Config.config(), 
+            config : Optional[Config.config] = None, 
             defined_key : Optional[resolver.defined_decode] =None,
             request_data : Any = None,
             request_json : Any| None =None,
@@ -108,7 +108,7 @@ async def main(url_dic : dict,
                 Bad_Response.append(models.FailedM3U8Data(url, reason=str(e)))
                 return 0
             if child is not None:                               
-                return await run(child, session=session,progress=progress,task=task)
+                return await run(child, session=session,progress=progress,task=task,outname=OutputFileName[child])
             progress.start_task(task_id=task)
             progress.update(task,total=len(M3U8_dic[url]))
             a=_DM.downloader(segment_lists=M3U8_dic[url],
@@ -132,7 +132,7 @@ async def main(url_dic : dict,
                                                 file_size_bytes=None,
                                                 list_path=DownnerResult['list_path'])
             if not DownnerResult['failed_segments'] and not DownnerResult['key_Error']:
-                a = _CV.converter(DownnerResult['list_path'], OutputFileName[url],config.quiet,config.keep_segments)
+                a = _CV.converter(DownnerResult['list_path'], OutputFileName[url],cfg.quiet,cfg.keep_segments)
                 try:
                     DownloadResult.file_size_bytes = await a.converter()
                 except exceptions.FailedConverterError as e:
@@ -165,9 +165,9 @@ async def main(url_dic : dict,
                 TextColumn("[progress.percentage]{task.percentage:>3.0f}%"),
                 TimeElapsedColumn(),                            # 已用时间
                 TimeRemainingColumn(),                          # 预计剩余
-                transient=False,
+                transient=cfg.transient,
                 expand=True,                                    # 撑满终端宽度
-                disable=not config.Rich
+                disable=not cfg.Rich
             )
         with Progress as progress:
             aiohttp.ClientSession.raise_for_status
@@ -182,8 +182,7 @@ async def main(url_dic : dict,
                     task =asyncio.create_task(run(url=url, session=session, task=task1, progress=progress,outname=OutputFileName[url]),name=OutputFileName[url])
                     tasks.append(task)
                 results=await asyncio.gather(*tasks,return_exceptions=True,)
-                for i in Bad_Response:
-                    logger.error('%s Error Failed: %s', i.m3u8_uri, i.reason)
+                
                 for t, r in zip(tasks, results):
                     if isinstance(r, Exception):
                         logger.error('%s Crashed: %r', t.get_name(), r, exc_info=r)
@@ -236,6 +235,8 @@ async def main(url_dic : dict,
                         file_size_bytes=size,
                         list_path=DownnerResult['list_path'])                         
                     save_records(DATA_PATH, records)
+        for i in Bad_Response:
+            logger.error('%s Error Failed: %s', i.m3u8_uri, i.reason)
     return Result
                             
 

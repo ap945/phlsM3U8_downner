@@ -1,7 +1,8 @@
 """Async HLS/m3u8 downloader with AES-128 decryption and ffmpeg merging."""
 import asyncio,shutil
 from typing import Any
-from . import main,exceptions,models,config as config_set,parser,resolver,_Converter
+from . import main,exceptions,models,config,parser,resolver,_Converter
+from .config import config as Config
 from .models import(
     Segment,
     key,
@@ -35,7 +36,7 @@ from .resolver import(
 __all__=[
     'DownAndMergeAsync',
     'DownAndMerge',
-    'config_set',
+    'Config',
     'Segment',
     'key',
     'DownloadResult',
@@ -60,7 +61,7 @@ __version__ = "0.1.0"
 
 
 
-def DownAndMerge(UrlAndName : dict, headers : dict=None ,config : config_set.config|None=None,
+def DownAndMerge(UrlAndName : dict, headers : dict=None ,config : Config|None=None,
                             request_method : str='get',lph : int =25,defined_key : defined_decode=None,
                             request_data : Any=None,request_json :Any=None
                             ,keep_segments :bool =False):
@@ -116,14 +117,14 @@ def DownAndMerge(UrlAndName : dict, headers : dict=None ,config : config_set.con
             )
     
     if config is None:
-        config = config_set.config()
+        config = Config()
     _ensure_ffmpeg()
     return asyncio.run(main.main(url_dic=UrlAndName, headers=headers, method=request_method,
                            sem=lph, config=config, defined_key=defined_key,
                            request_data=request_data, request_json=request_json, keep_segments=keep_segments))
 
 
-async def DownAndMergeAsync(UrlAndName : dict, headers : dict=None ,config : config_set.config|None=None,
+async def DownAndMergeAsync(UrlAndName : dict, headers : dict=None ,config : Config|None=None,
                             request_method : str='get',lph : int =25,defined_key : defined_decode=None,
                             request_data : dict|Any=None,request_json :dict|Any=None
                             ,keep_segments :bool =False):
@@ -180,7 +181,7 @@ async def DownAndMergeAsync(UrlAndName : dict, headers : dict=None ,config : con
                 )
         
     if config is None:
-        config = config_set.config()
+        config = Config()
     _ensure_ffmpeg()
     return await main.main(url_dic=UrlAndName, headers=headers, method=request_method,
                            sem=lph, config=config, defined_key=defined_key,

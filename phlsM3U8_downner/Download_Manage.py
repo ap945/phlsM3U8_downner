@@ -56,9 +56,11 @@ class downloader:
             return
         exc = retry_state.outcome.exception() if retry_state.outcome else None
         url = retry_state.args[0] if retry_state.args else '?'
-        self.progress.console.print(
-            f"[yellow]⚠ {str(url)[:80]} 第 {retry_state.attempt_number} 次失败，准备重试: {exc!r}"
-    )
+        if self.config.Detailed_Infomaition:
+            self.logger.error(f"⚠ {str(url)[:80]} NO. {retry_state.attempt_number} failure,Ready to try again: {exc!r}")
+        else:
+            self.logger.error(f"⚠ {str(url)[:80]} NO. {retry_state.attempt_number} failure,Ready to try again: {exc}")
+    
 
     
     async def _down(self, url : str, headers : dict =None)->tuple:    #下载内容
@@ -221,7 +223,7 @@ class downloader:
                     await self.Add_MAP(segment=segment, filepath=_file_path)
                     await self.DownAndDecode(segment, _file_path,progress=progress)
                 except exceptions.FailedNoMethodError as e:
-                    self.Bad_key.append(models.KeyErrorInfo(segment=segment,reason=exceptions.FailedNoMethodError(),exception=str(e)))
+                    self.Bad_key.append(models.KeyErrorInfo(segment=segment,reason=str(e),exception=exceptions.FailedNoMethodError()))
 
                 except exceptions.FailedMethodError as e:
                     self.Bad_key.append(models.KeyErrorInfo(segment=segment,reason='The encryption type is not supported right now',exception=str(e)))
