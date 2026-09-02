@@ -89,6 +89,6 @@ Windows：`winget install ffmpeg` · macOS：`brew install ffmpeg` · Linux：`s
     
     ## 0.1.1 日志由中文改为英文
 
-## 0.1.0 首次发布
+    ## 0.1.0 首次发布
 
   
