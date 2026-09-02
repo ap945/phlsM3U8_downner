@@ -1,9 +1,9 @@
+## The latest README is at:"https://github.com/ap945/phlsM3U8_downner"
 
 
-
-##PYPI:https://pypi.org/project/phlsM3U8-downner/
 
 ## phlsM3U8_downner
+
 
 
 Async HLS/m3u8 downloader with AES-128 decryption and ffmpeg merging.
@@ -15,10 +15,10 @@ Supports choosing quality in the main playlist, concurrent slice downloads, AES-
 ## Install
 
 
+
 ##   pip install phlsM3U8_downner
 
-## Update pack
-      - pip install --upgrade phlsM3U8_downner
+
 
 Requires **ffmpeg** on system PATH:
 
@@ -121,12 +121,14 @@ Windows `winget install ffmpeg` · macOS `brew install ffmpeg` · Linux `sudo ap
   -Meanwhile, the corresponding data in data.json will be cleared
 
 ## Changelog
+    ## 0.1.5 fix bug
+
     ## 0.1.4 Update the Detailed_Information property in the config to show detailed retry report info
 
     ## 0.1.3 optimise
-    
+      
     ## 0.1.2 None
-    
+      
     ## 0.1.1 Chinese logging -> English logging 
     
     ## 0.1.0 first release

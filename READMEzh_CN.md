@@ -1,7 +1,8 @@
+## 最新的README.md在:"https://github.com/ap945/phlsM3U8_downner"
+
 ## PYPI:[https://pypi.org/project/phlsM3U8-downner/](https://pypi.org/project/phlsM3U8-downner/)
 
 ## phlsM3U8_downner
-
 
 支持 AES-128 解密与 ffmpeg 合并的异步 HLS/m3u8 下载工具。
 
@@ -10,9 +11,6 @@
 ## Install
 
 ## pip install phlsM3U8_downner
-
- ## 更新包
-      - pip install --upgrade phlsM3U8_downner
 
 需系统 PATH 环境变量中包含 **ffmpeg**：
 Windows：`winget install ffmpeg` · macOS：`brew install ffmpeg` · Linux：`sudo apt install ffmpeg`
@@ -90,7 +88,9 @@ Windows：`winget install ffmpeg` · macOS：`brew install ffmpeg` · Linux：`s
     ![breakpoint2](docs/video/breakpoint1show.gif)
     - 同时，data.json 中对应的失败记录会被清空
 ## 更新日志
-    ## 0.1.4 在config中更新 Detailed_Infomaition属性,可详细显示重试报详信息
+    ## 0.1.5修复了一个bug
+
+    ## 0.1.4 Update the Detailed_Information property in the config to show detailed retry report info
 
     ## 0.1.3 优化
     
