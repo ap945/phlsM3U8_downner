@@ -103,6 +103,8 @@ result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
 - 多个主播放列表同时下载时需手动选清晰度，建议逐个下载
 - 配置项见 `More usage Config`（IDE 悬浮即可查看全部字段）
 
+## 0.1.3 optimise
+
 ## 0.1.2 None
 
 ## 0.1.1 Chinese logging -> English logging
