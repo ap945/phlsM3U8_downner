@@ -47,7 +47,7 @@ Windows：`winget install ffmpeg` · macOS：`brew install ffmpeg` · Linux：`s
         - key_method /method：method 是普通分片（segment）文件的请求模式，key_method 是专门用于密钥请求的模式；在部分场景下该区分很有用。你可以将二者统一设为 **'get'**
         - Wait_Merge：若设为 True，会忽略 data.json 中的失败分片，直接合并已成功下载的分片，这可能导致合并后的视频缺少部分片段
         
-##- resolver：
+##resolver：
         - 在 defined_decode 中，**defined_method** 用于自定义加密方案，但 phlsM3U8_downner 可能不支持这类方案（目前仅支持 AES-128 加密，已可满足绝大多数场景）
         - 你可以通过 **defined_func** 参数传入自定义解密函数，格式为 **{key_url: function_name}**，phlsM3U8_downner 会调用你的函数执行解密
         - 如果获取到的密钥本身是加密的，可以使用 encrypto_key **{key_url: function_name}** 来解密密钥
