@@ -63,7 +63,7 @@ result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
 
   - Config:
 
-      in config_set  It has a lot of settings, see below:
+      in Config  It has a lot of settings, see below:
 ```
    ————————————————                    ————————————————————————————
 
@@ -116,7 +116,7 @@ result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
   #This is a example
 ```
 
-#Notes on `config_set`:
+#Notes on `Config`:
 
          - If you want to use breakpoint_request, the failed segments in data.json (failed_segments/key_errors) must not be [], otherwise nothing will happen
 
@@ -152,7 +152,7 @@ result = phlsM3U8_downner.DownAndMerge(UrlAndName=dic,headers=headers)
 
 - When downloading multiple master playlists simultaneously, quality must be selected manually — it is recommended to download them one by one
 
-- For configuration options, see `config_set.config` (hover in your IDE to view all fields)
+- For configuration options, see `Config` (hover in your IDE to view all fields)
 ## 0.1.2 None
 
 ## 0.1.1 Chinese logging -> English logging 
